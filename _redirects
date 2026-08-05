@@ -1,0 +1,36 @@
+# retired URL structures -> current service pages
+
+/solar-generator/*  /solar-generators/:splat  301
+/solar-generator/  /solar-generators/  301
+/portable-power-station/*  /portable-power-stations/:splat  301
+/portable-power-station/  /portable-power-stations/  301
+/portable-solar-panels/*  /solar-panels/:splat  301
+/portable-solar-panels/  /solar-panels/  301
+/rv-solar-generator/*  /solar-generator-for-rv/:splat  301
+/rv-solar-generator/  /solar-generator-for-rv/  301
+/camping-solar-generator/*  /solar-generator-for-camping/:splat  301
+/camping-solar-generator/  /solar-generator-for-camping/  301
+/home-backup-solar/*  /solar-generator-for-home-backup/:splat  301
+/home-backup-solar/  /solar-generator-for-home-backup/  301
+/off-grid-solar-generator/*  /off-grid-solar-power/:splat  301
+/off-grid-solar-generator/  /off-grid-solar-power/  301
+/portable-solar-generator/*  /portable-solar-power/:splat  301
+/portable-solar-generator/  /portable-solar-power/  301
+/jackery-affiliate/*  /jackery-solar-generator/:splat  301
+/jackery-affiliate/  /jackery-solar-generator/  301
+/jackery-explorer/*  /jackery-solar-generator/:splat  301
+/jackery-explorer/  /jackery-solar-generator/  301
+/jackery-power-station/*  /jackery-solar-generator/:splat  301
+/jackery-power-station/  /jackery-solar-generator/  301
+/best-jackery-deals/*  /best-solar-generator/:splat  301
+/best-jackery-deals/  /best-solar-generator/  301
+/best-portable-power-station/*  /best-solar-generator/:splat  301
+/best-portable-power-station/  /best-solar-generator/  301
+/solar-generator-reviews/*  /best-solar-generator/:splat  301
+/solar-generator-reviews/  /best-solar-generator/  301
+/solar-generator-sale/*  /best-solar-generator/:splat  301
+/solar-generator-sale/  /best-solar-generator/  301
+/emergency-power-station/*  /solar-generator-for-home-backup/:splat  301
+/emergency-power-station/  /solar-generator-for-home-backup/  301
+/solar-power-station/*  /portable-power-stations/:splat  301
+/solar-power-station/  /portable-power-stations/  301
