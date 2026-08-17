@@ -34,3 +34,15 @@
 /emergency-power-station/  /solar-generator-for-home-backup/  301
 /solar-power-station/*  /portable-power-stations/:splat  301
 /solar-power-station/  /portable-power-stations/  301
+
+# St Louis was renamed in the city pool; the old slug left a duplicate page.
+/solar-generators/saint-louis-mo.html  /solar-generators/st-louis-mo.html  301
+/portable-power-stations/saint-louis-mo.html  /portable-power-stations/st-louis-mo.html  301
+/solar-panels/saint-louis-mo.html  /solar-panels/st-louis-mo.html  301
+/jackery-solar-generator/saint-louis-mo.html  /jackery-solar-generator/st-louis-mo.html  301
+/best-solar-generator/saint-louis-mo.html  /best-solar-generator/st-louis-mo.html  301
+/solar-generator-for-camping/saint-louis-mo.html  /solar-generator-for-camping/st-louis-mo.html  301
+/solar-generator-for-home-backup/saint-louis-mo.html  /solar-generator-for-home-backup/st-louis-mo.html  301
+/solar-generator-for-rv/saint-louis-mo.html  /solar-generator-for-rv/st-louis-mo.html  301
+/off-grid-solar-power/saint-louis-mo.html  /off-grid-solar-power/st-louis-mo.html  301
+/portable-solar-power/saint-louis-mo.html  /portable-solar-power/st-louis-mo.html  301
