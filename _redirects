@@ -1,5 +1,8 @@
 # Dominion Solar Pro redirects (rebuilt Oct 29 2026)
 
+# Page sources and build script are not public pages.
+/_build/*  /  301!
+
 # Retired folder names: every old address goes straight to the topic page, one hop.
 
 /solar-generator/  /solar-generators/  301
