@@ -43,16 +43,16 @@
 # Retired city pages (about 9,800, deleted Sep 5 2026) inside the current topic folders.
 # Not forced, so the topic page itself (index.html) is still served normally.
 
-/best-solar-generator/*  /best-solar-generator/  301
-/jackery-solar-generator/*  /jackery-solar-generator/  301
-/off-grid-solar-power/*  /off-grid-solar-power/  301
+/best-solar-generator/:page  /best-solar-generator/  301
+/jackery-solar-generator/:page  /jackery-solar-generator/  301
+/off-grid-solar-power/:page  /off-grid-solar-power/  301
 /portable-power-stations/*  /best-solar-generator/  301
 /portable-solar-power/*  /solar-panels/  301
-/solar-generator-for-camping/*  /solar-generator-for-camping/  301
-/solar-generator-for-home-backup/*  /solar-generator-for-home-backup/  301
-/solar-generator-for-rv/*  /solar-generator-for-rv/  301
+/solar-generator-for-camping/:page  /solar-generator-for-camping/  301
+/solar-generator-for-home-backup/:page  /solar-generator-for-home-backup/  301
+/solar-generator-for-rv/:page  /solar-generator-for-rv/  301
 /solar-generators/*  /best-solar-generator/  301
-/solar-panels/*  /solar-panels/  301
+/solar-panels/:page  /solar-panels/  301
 
 /service-areas.html  /  301
 
