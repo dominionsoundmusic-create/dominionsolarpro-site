@@ -69,6 +69,7 @@ img{max-width:100%;display:block}a{color:var(--sky)}a:hover{color:var(--ember)}
 h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin:0 0 .6em;padding-left:14px;border-left:6px solid var(--amber);color:var(--pine)}
 h3{font-size:1.2rem;margin:1.6em 0 .4em;color:var(--pine)}
 .band-blue h3{color:#fff}
+.band-blue .pick,.band-ember .pick{color:var(--ink)}.band-blue .pick h3{color:var(--pine)}.band-blue .pick a:not(.btn){color:var(--sky)}.band-blue .btn-dark,.band-ember .btn-dark{color:#fff}
 p{margin:0 0 1em}
 figure{margin:28px 0}figure img{width:100%;height:auto;border-radius:10px}
 figcaption{font-size:.88em;color:var(--muted);padding-top:8px}
@@ -86,6 +87,16 @@ tr:nth-child(even) td{background:#EEF3F0}
 .pick h3{margin-top:0}
 .pick .spec{font-size:.92em;color:var(--muted)}
 .pick .btn{margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:22px}
+.card{display:block;border:2px solid var(--pine);border-radius:12px;overflow:hidden;text-decoration:none;color:var(--ink);background:#fff}
+.card:hover{border-color:var(--ember);color:var(--ink)}
+.card figure{margin:0}.card img{border-radius:0;aspect-ratio:16/10;object-fit:cover}
+.card .ph{aspect-ratio:16/10;background:var(--sky);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+.card div.c{padding:16px 18px}.card h3{margin:0 0 6px}.card p{margin:0;font-size:.95em;color:var(--muted)}
+.video{position:relative;display:block;width:100%;max-width:960px;aspect-ratio:16/9;border:0;padding:0;border-radius:12px;overflow:hidden;cursor:pointer;background:#000}
+.video img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.video span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:64px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .related{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 .related a{border:2px solid var(--pine);border-radius:100px;padding:8px 18px;text-decoration:none;color:var(--pine);font-weight:700;font-size:.95em;background:#fff}
 .related a:hover{background:var(--pine);color:#fff}
@@ -156,15 +167,24 @@ def expand_figures(body):
     return re.sub(r'<fig\s[^>]*>', rep, body)
 
 
+def expand_cards(body):
+    def rep(m):
+        a = dict(re.findall(r'(\w+)="([^"]*)"', m.group(0)))
+        img = (picture(a["src"], a["alt"], "(max-width: 860px) 100vw, 33vw") if a.get("src")
+               else f'<div class="ph">{a.get("ph", "Photo coming")}</div>')
+        return f'<a class="card" href="{a["href"]}"><figure>{img}</figure><div class="c"><h3>{a["title"]}</h3><p>{a["text"]}</p></div></a>'
+    return re.sub(r'<card\s[^>]*>', rep, body)
+
+
 def build(path):
     raw = path.read_text(encoding="utf-8")
     m = re.match(r"\s*<!--META\s*(\{.*?\})\s*META-->\s*(.*)", raw, re.S)
     if not m:
         raise SystemExit(f"{path.name}: missing META header")
     meta = json.loads(m.group(1))
-    body = expand_figures(m.group(2))
+    body = expand_cards(expand_figures(m.group(2)))
     slug = meta["slug"]
-    url = f"{SITE}/{slug}/"
+    url = f"{SITE}/{slug}/" if slug else f"{SITE}/"
     hero_srcset, _, _ = webp_set(meta["hero"])
     hero_pic = picture(meta["hero"], meta["hero_alt"], "100vw", hero=True)
     nav = "".join(
@@ -179,6 +199,11 @@ def build(path):
                 {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
                 {"@type": "ListItem", "position": 2, "name": meta["h1"], "item": url}]},
         ]}
+    if not slug:
+        schema["@graph"][0] = {"@type": "WebSite", "name": "Dominion Solar Pro", "url": SITE + "/", "description": meta["description"]}
+        schema["@graph"].pop(1)
+    for extra in meta.get("extra_schema", []):
+        schema["@graph"].append(extra)
     if meta.get("faq"):
         schema["@graph"].append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
@@ -221,7 +246,7 @@ def build(path):
 <footer class="foot"><div class="foot-grid">
 <div><h4>Dominion Solar Pro</h4><p>Plain-spoken buying guides for Jackery solar generators, power stations and panels. Based in East Texas.</p></div>
 <div><h4>Guides</h4><ul>{"".join(f'<li><a href="{h}">{t}</a></li>' for t, h in NAV)}</ul></div>
-<div><h4>More</h4><ul><li><a href="/buying-guide.html">Buying guide</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about.html">About</a></li><li><a href="https://www.facebook.com/dominionsolarenergypros" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+<div><h4>More</h4><ul><li><a href="/jackery-solar-generator/">Jackery lineup</a></li><li><a href="/about/">About</a></li><li><a href="https://www.facebook.com/dominionsolarenergypros" target="_blank" rel="noopener">Facebook</a></li></ul></div>
 </div>
 <p class="fine"><b>Affiliate disclosure:</b> Dominion Solar Pro is a Jackery affiliate. We earn a commission when you buy through our Jackery links, at no extra cost to you. Specs come from Jackery's published ratings; confirm current specs, stock and price on the product page before you buy.<br>&copy; 2026 Dominion Solar Pro, a Dominion Digital Group brand. East Texas, USA.</p>
 </footer>
@@ -229,7 +254,7 @@ def build(path):
 </body>
 </html>
 """
-    out = ROOT / slug / "index.html"
+    out = (ROOT / slug / "index.html") if slug else (ROOT / "index.html")
     out.parent.mkdir(exist_ok=True)
     out.write_text(page, encoding="utf-8")
     return out, len(page)
