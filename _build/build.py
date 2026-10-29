@@ -81,7 +81,7 @@ tr:nth-child(even) td{background:#EEF3F0}
 .box{border:2px solid var(--sky);background:#E3F1F7;border-radius:10px;padding:20px 22px;margin:24px 0}
 .box-warn{border-color:var(--ember);background:#FDEBE3}
 .box p:last-child{margin-bottom:0}
-.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;margin-top:24px}
 .pick{border:2px solid var(--pine);border-top:8px solid var(--amber);border-radius:12px;padding:22px;background:#F2F6F3}
 .pick h3{margin-top:0}
 .pick .spec{font-size:.92em;color:var(--muted)}
@@ -98,7 +98,7 @@ tr:nth-child(even) td{background:#EEF3F0}
 .foot ul{list-style:none;margin:0;padding:0}.foot li{margin:0 0 6px}
 .foot .fine{border-top:1px solid rgba(255,255,255,.18);margin-top:26px;padding-top:16px;font-size:13.5px}
 .skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;z-index:99;background:#fff;padding:8px}
-@media(max-width:760px){.site-head{position:static}.head-in{gap:10px 14px}.brand{font-size:17px}.lang{margin-left:auto;padding:6px 12px}.nav{order:3;width:100%;margin:0;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:2px;scrollbar-width:none}.nav a{white-space:nowrap;font-size:14.5px}.hero{height:auto;min-height:480px;padding:60px 0}.hero::after{background:linear-gradient(180deg,rgba(14,26,20,.55) 0%,rgba(14,26,20,.85) 55%,rgba(14,26,20,.92) 100%)}.band{padding:40px var(--rail)}}
+@media(max-width:760px){.site-head{position:static}.head-in{gap:10px 14px}.brand{font-size:17px}.lang{margin-left:auto;padding:6px 12px}.nav{order:3;width:100%;margin:0;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:2px;scrollbar-width:none}.nav a{white-space:nowrap;font-size:14.5px}.hero{height:auto;min-height:480px;padding:60px 0}.hero::after{background:linear-gradient(180deg,rgba(14,26,20,.55) 0%,rgba(14,26,20,.85) 55%,rgba(14,26,20,.92) 100%)}.band{padding:40px var(--rail)}table{display:block;overflow-x:auto;font-size:.88em}th,td{padding:10px 10px}}
 #google_translate_element{display:none}
 body{top:0!important}.goog-te-banner-frame,.skiptranslate iframe{display:none!important}
 """
