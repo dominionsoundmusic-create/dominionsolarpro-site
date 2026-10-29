@@ -5,10 +5,10 @@
 
 # Retired folder names: every old address goes straight to the topic page, one hop.
 
-/solar-generator/  /solar-generators/  301
-/solar-generator/*  /solar-generators/  301
-/portable-power-station/  /portable-power-stations/  301
-/portable-power-station/*  /portable-power-stations/  301
+/solar-generator/  /best-solar-generator/  301
+/solar-generator/*  /best-solar-generator/  301
+/portable-power-station/  /best-solar-generator/  301
+/portable-power-station/*  /best-solar-generator/  301
 /portable-solar-panels/  /solar-panels/  301
 /portable-solar-panels/*  /solar-panels/  301
 /rv-solar-generator/  /solar-generator-for-rv/  301
@@ -19,8 +19,8 @@
 /home-backup-solar/*  /solar-generator-for-home-backup/  301
 /off-grid-solar-generator/  /off-grid-solar-power/  301
 /off-grid-solar-generator/*  /off-grid-solar-power/  301
-/portable-solar-generator/  /portable-solar-power/  301
-/portable-solar-generator/*  /portable-solar-power/  301
+/portable-solar-generator/  /solar-panels/  301
+/portable-solar-generator/*  /solar-panels/  301
 /jackery-affiliate/  /jackery-solar-generator/  301
 /jackery-affiliate/*  /jackery-solar-generator/  301
 /jackery-explorer/  /jackery-solar-generator/  301
@@ -37,8 +37,8 @@
 /solar-generator-sale/*  /best-solar-generator/  301
 /emergency-power-station/  /solar-generator-for-home-backup/  301
 /emergency-power-station/*  /solar-generator-for-home-backup/  301
-/solar-power-station/  /portable-power-stations/  301
-/solar-power-station/*  /portable-power-stations/  301
+/solar-power-station/  /best-solar-generator/  301
+/solar-power-station/*  /best-solar-generator/  301
 
 # Retired city pages (about 9,800, deleted Sep 5 2026) inside the current topic folders.
 # Not forced, so the topic page itself (index.html) is still served normally.
@@ -46,12 +46,17 @@
 /best-solar-generator/*  /best-solar-generator/  301
 /jackery-solar-generator/*  /jackery-solar-generator/  301
 /off-grid-solar-power/*  /off-grid-solar-power/  301
-/portable-power-stations/*  /portable-power-stations/  301
-/portable-solar-power/*  /portable-solar-power/  301
+/portable-power-stations/*  /best-solar-generator/  301
+/portable-solar-power/*  /solar-panels/  301
 /solar-generator-for-camping/*  /solar-generator-for-camping/  301
 /solar-generator-for-home-backup/*  /solar-generator-for-home-backup/  301
 /solar-generator-for-rv/*  /solar-generator-for-rv/  301
-/solar-generators/*  /solar-generators/  301
+/solar-generators/*  /best-solar-generator/  301
 /solar-panels/*  /solar-panels/  301
 
 /service-areas.html  /  301
+
+# Merged Oct 29 2026: thin duplicate topic pages now point at the full guide.
+/portable-solar-power/  /solar-panels/  301
+/portable-power-stations/  /best-solar-generator/  301
+/solar-generators/  /best-solar-generator/  301
